@@ -18,13 +18,18 @@ class CreateBooksTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('author_id')->unsigned();
             $table->integer('review_id')->unsigned();
-            $table->boolean('active');
+            $table->integer('report_id')->unsigned();
+            $table->boolean('active')->default(false);
+            $table->timestamp('active_at')->nullable();
             $table->string('title');
             $table->text('description');
             $table->string('file');
             $table->double('price', 8, 2)->unsigned();
             $table->bigInteger('price_discount')->unsigned();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('review_id')->references('id')->on('reviews');
+            $table->index('active');
         });
     }
 
