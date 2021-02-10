@@ -14,7 +14,9 @@ class CreateReportsTable extends Migration
     public function up()
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
+            $table->foreignId('books_id')->constrained()->onDelete('cascade');
+            $table->foreignId('users_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('description');
             $table->timestamps();
