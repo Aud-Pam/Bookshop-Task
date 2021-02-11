@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Books;
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BooksFactory extends Factory
+class BookFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Books::class;
+    protected $model = Book::class;
 
     /**
      * Define the model's default state.
@@ -28,7 +28,7 @@ class BooksFactory extends Factory
         $active_at=now();
         $data=[
 
-            'users_id'=>(rand(1,5)==5)?1:2,
+            'user_id'=>(rand(1,5)==5)?1:2,
             'active'=>$active,
             'active_at'=>$active_at,
             'title'=>$title,

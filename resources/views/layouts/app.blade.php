@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="text-xl pl-10 pr-10">
+<body class="text-xl pl-10 pr-10 ">
 
     <nav class="border-b border-gray-800">
         <div class="container font-sans bg-gray-100 max-w-full text-white p-5 table clear-both">

@@ -28,7 +28,7 @@ class UserFactory extends Factory
 
         return [
             'name' => $this->faker->name,
-            'roles_id'=>'2',
+            'role_id'=>'2',
             'birth_day'=>$date->addWeeks(rand(1, 52))->format('Y-m-d H:i:s'),
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),

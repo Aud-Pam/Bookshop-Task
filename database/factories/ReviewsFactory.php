@@ -22,8 +22,8 @@ class ReviewsFactory extends Factory
     public function definition()
     {
         return [
-            'users_id'=>(rand(1,5)==5)?1:2,
-            'books_id'=>rand(1,20),
+            'user_id'=>(rand(1,5)==5)?1:2,
+            'book_id'=>rand(1,20),
             'rating'=>rand(1,5),
             'description'=>$this->faker->realText(rand(100,300)),
 

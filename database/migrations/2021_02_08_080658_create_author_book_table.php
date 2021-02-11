@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGenresStoresTable extends Migration
+class CreateAuthorBookTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateGenresStoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('genres_stores', function (Blueprint $table) {
+        Schema::create('author_book', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('genres_id')->constrained()->onDelete('cascade');
-            $table->foreignId('books_id')->constrained()->onDelete('cascade');
+            $table->foreignId('author_id')->constrained()->onDelete('cascade');
+            $table->foreignId('book_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateGenresStoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('genres_stores');
+        Schema::dropIfExists('author_book');
     }
 }
