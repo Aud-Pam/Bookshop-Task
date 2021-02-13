@@ -14,11 +14,11 @@ class Author extends Model
             'name'
         ];
 
-    public function books()
-    {
-        return $this->belongsToMany(Book::class);
-
-    }
+//    public function books()
+//    {
+//        return $this->belongsToMany(Book::class);
+//
+//    }
 
 
 }

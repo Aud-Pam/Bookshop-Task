@@ -1,36 +1,36 @@
-<!doctype html>
-<head>
-    <!-- ... --->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body class="text-xl pl-10 pr-10 ">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <nav class="border-b border-gray-800">
-        <div class="container font-sans bg-gray-100 max-w-full text-white p-5 table clear-both">
-            <div class="float-left">
-                <input type="text" class="border rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Search...">
-            </div>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-                <ul class="float-right list-none">
-                    <li class="inline-block">
-                        <a class="p-3 bg-yellow-500 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50" href="#" >Sign Up</a>
-                    </li>
-                    <li class="inline-block">
-                        <a  class="p-3 bg-yellow-700 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50" href="#" >Sign in</a>
-                    </li>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-                </ul>
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
 
+            <!-- Page Heading -->
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
-
-
-
-    </nav>
-
-
-@yield('content')
-</body>
+    </body>
 </html>

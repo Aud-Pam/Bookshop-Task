@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\Shop\BookShopController;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/shop','\App\Http\Controllers\Shop\BookShopController@index');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//
+//})->middleware(['auth'])->name('dashboard');
 
-//Route::get('/shop','\App\Http\Controllers\RestTestController@index');
-Route::get('shop',[BookShopController::class,'index']);
+Route::group(['middleware'=>'auth'],function (){
+        Route::get('/dashboard', function (){
+            return view('dashboard');
+        })->name('dashboard');
+});
 
+    Route::group(['prefix'=>'shop', 'as'=>'shop.'],function(){
+        Route::resource('books',\App\Http\Controllers\Shop\BookShopController::class);
+});
+
+require __DIR__.'/auth.php';
