@@ -20,23 +20,15 @@ Route::get('/', function () {
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //
-//})->middleware(['auth'])->name('dashboard');
 
-//Route::group(['middleware'=>'auth'],function (){
-//        Route::get('/dashboard', function (){
-//            return view('dashboard');
-//        })->name('dashboard');
-//});
-
-Route::group(['middleware'=>'auth'],function (){
-    Route::get('/dashboard',([\App\Http\Controllers\Shop\BookShopController::class,'userBooks']))->name('dashboard');
-});
 
     Route::group(['prefix'=>'shop', 'as'=>'shop.'],function(){
-        $methods=['index','edit','store','update','create','destroy','userBooks'];
-        $methods_user=['index','edit','update'];
+        $methods=['edit','store','update','create','destroy'];
+        $methods_user=['index','update','updatePass'];
+        Route::get('/dashboard',([\App\Http\Controllers\Shop\BookShopController::class,'index']))->name('dashboard')->middleware('auth');
+        Route::put('/user/settings',([\App\Http\Controllers\Shop\UserSettings::class,'updatePass']))->name('password.update')->middleware('auth');
         Route::resource('books',\App\Http\Controllers\Shop\BookShopController::class)->only($methods)->middleware('auth');
-        Route::resource('/user/settings',\App\Http\Controllers\Shop\UserSettings::class)->only($methods)->middleware('auth');
+        Route::resource('/user/settings',\App\Http\Controllers\Shop\UserSettings::class)->only($methods_user)->middleware('auth');
 });
 
 

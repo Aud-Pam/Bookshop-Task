@@ -24,20 +24,27 @@ class BookShopController extends BaseController
     public function index()
     {
 
-        $items=Book::with('author')->simplePaginate(25);
-
-
-      //dd($items);
-        return view('shop.products.home',compact('items'));
-    }
-    public function userBooks()
-    {
         $user=Auth::user()->id;
         $items=Book::where('user_id','=',$user)->get();
 
-       // dd($items);
-        return view('dashboard',compact('items'));
+        // dd($items);
+        return view('shop.products.dashboard',compact('items'));
+
+
+//        $items=Book::with('author')->simplePaginate(25);
+//
+//
+//      //dd($items);
+//        return view('shop.products.home',compact('items'));
     }
+//    public function userBooks()
+//    {
+//        $user=Auth::user()->id;
+//        $items=Book::where('user_id','=',$user)->get();
+//
+//       // dd($items);
+//        return view('dashboard',compact('items'));
+//    }
 
 
     public function create()
@@ -151,10 +158,10 @@ class BookShopController extends BaseController
         $book->delete();
 
         if($book){
-            return redirect()->route('dashboard')
+            return redirect()->route('shop.dashboard')
                 ->with(['success'=>'DELETED ']);
         }else{
-            return redirect()->route('dashboard')->withErrors(['msd'=>'Error on save date'])->withInput();
+            return redirect()->route('shop.dashboard')->withErrors(['msd'=>'Error on save date'])->withInput();
         }
 
     }

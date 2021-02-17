@@ -27,7 +27,7 @@
             </div>
                 <div class="mt-4">
                     <x-label for="date" :value="__('Select Birth Day')" />
-                    <input  name="birth_day" type="datetime-local" :value="old('birth_day')"  />
+                    <input  name="birth_day" type="datetime" :value="old('birth_day')"  />
                 </div>
 
             <!-- Password -->

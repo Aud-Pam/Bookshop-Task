@@ -102,7 +102,7 @@
                                                     Admin
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{'shop/books/'.$item->id.'/edit'}}" class="p-6 bg-blue">Edit</a>
+                                                    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{'books/'.$item->id.'/edit'}}" class="p-6 bg-blue">Edit</a>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                     <form action="{{ route('shop.books.destroy', $item->id)}}" method="post">
@@ -129,37 +129,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
 
-        const input=document.querySelector('#search');
-
-
-        const debounce=(func)=>{
-            let timeOutId;
-            return (...args)=>{
-                if(timeOutId){
-                    clearTimeout(timeOutId);
-                }
-                timeOutId=setTimeout(()=>{
-                    func.apply(null,args);
-                },200)
-            }
-        }
-        const onInput=()=>{
-            inputResult();
-        };
-
-        const inputResult=function(){
-            // input.forEach(item=>{
-                input.addEventListener('keypress',debounce(onInput));
-
-            // });
-
-        };
-        //console(inputResult());
-
-
-    </script>
 
 
 </x-app-layout>
