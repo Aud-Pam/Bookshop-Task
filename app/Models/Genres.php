@@ -13,4 +13,6 @@ class Genres extends Model
         [
             'name'
         ];
+
+
 }

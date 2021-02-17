@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class GenreBook extends Model
 {
     use HasFactory;
+
 }

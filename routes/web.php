@@ -22,14 +22,26 @@ Route::get('/', function () {
 //
 //})->middleware(['auth'])->name('dashboard');
 
+//Route::group(['middleware'=>'auth'],function (){
+//        Route::get('/dashboard', function (){
+//            return view('dashboard');
+//        })->name('dashboard');
+//});
+
 Route::group(['middleware'=>'auth'],function (){
-        Route::get('/dashboard', function (){
-            return view('dashboard');
-        })->name('dashboard');
+    Route::get('/dashboard',([\App\Http\Controllers\Shop\BookShopController::class,'userBooks']))->name('dashboard');
 });
 
     Route::group(['prefix'=>'shop', 'as'=>'shop.'],function(){
-        Route::resource('books',\App\Http\Controllers\Shop\BookShopController::class);
+        $methods=['index','edit','store','update','create','destroy','userBooks'];
+        $methods_user=['index','edit','update'];
+        Route::resource('books',\App\Http\Controllers\Shop\BookShopController::class)->only($methods)->middleware('auth');
+        Route::resource('/user/settings',\App\Http\Controllers\Shop\UserSettings::class)->only($methods)->middleware('auth');
 });
 
+
+//$route_group=[
+//    'namespace'=>'Shop\Admin',
+//    'prefix'=>'blog/admin'
+//];
 require __DIR__.'/auth.php';

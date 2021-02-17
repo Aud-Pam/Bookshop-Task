@@ -95,7 +95,7 @@
                                     type="text"
                                     name="description"
                                     value="{{old('description')}}"
-                            />Description</textarea>
+                            /></textarea>
                         </div>
                         <div class="mb-4">
                             {{--<label class="w-34 flex flex-col items-center px-2 py-4 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue--}}

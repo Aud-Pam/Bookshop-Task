@@ -10,7 +10,10 @@
         @foreach($items as $item)
 
                 <div class="border-solid border-4 border-light-blue-500 rounded-lg px-3 py-2 md:py-2 md:px-3 hover:border-gray-500 hover:shadow-2xl">
-                    <img src="{{ asset('/storage/images/'.$item->file) }}" alt="">
+                    <span >
+                        <img src="{{ asset('/storage/images/'.$item->file) }}" alt="">
+                    </span>
+
 
                     <span class="w-full block overflow-ellipsis overflow-hidden  whitespace-nowrap  text-2xl text-center">
 
