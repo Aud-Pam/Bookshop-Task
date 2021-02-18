@@ -5,13 +5,14 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('shop.dashboard') }}">
+                    <a href="{{ redirect('/') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
                     <x-nav-link :href="route('shop.dashboard')" :active="request()->routeIs('shop.dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
@@ -35,6 +36,15 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
+                        <x-dropdown-link :href="route('shop.books.create')"
+                        >
+                            {{ __('Create New') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('shop.settings.index')"
+                        >
+                            {{ __('Settings') }}
+                        </x-dropdown-link>
+
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
@@ -44,10 +54,7 @@
                                 {{ __('Logout') }}
                             </x-dropdown-link>
                         </form>
-                        <x-dropdown-link :href="route('shop.settings.index')"
-                                        >
-                            {{ __('Settings') }}
-                        </x-dropdown-link>
+
                     </x-slot>
                 </x-dropdown>
             </div>

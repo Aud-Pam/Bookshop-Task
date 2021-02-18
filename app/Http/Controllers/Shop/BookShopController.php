@@ -83,7 +83,7 @@ class BookShopController extends BaseController
 
 
         if($book){
-            return redirect()->route('dashboard')
+            return redirect()->route('shop.dashboard')
                 ->with(['success'=>'Please wait while Administrator confirm the new Book']);
         }else{
             return redirect()->route('shop.book.create',$book->id)->withErrors(['msd'=>'Error on save date'])->withInput();

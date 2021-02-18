@@ -48,5 +48,19 @@ class User extends Authenticatable
         return $this->hasMany(Book::class);
 
     }
+    public function role()
+    {
+        return $this->belongsTo(Roles::class);
+
+    }
+
+    public function isAdministrator(){
+            if($this->role->name == 'admin'){
+                return true;
+            }
+            return false;
+    }
+
+
 
 }

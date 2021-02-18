@@ -12,7 +12,7 @@
                     <div class="flex justify-between w-full">
                         <div class="text-green-600">
                             <p class="mb-2 font-bold">
-                                Book added successfully
+                                Book edited successfully
                             </p>
                             <p class="text-xs">
                                 {{$message}}

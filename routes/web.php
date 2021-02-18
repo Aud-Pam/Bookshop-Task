@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
+
 });
 
 //Route::get('/dashboard', function () {
@@ -30,6 +34,10 @@ Route::get('/', function () {
         Route::resource('books',\App\Http\Controllers\Shop\BookShopController::class)->only($methods)->middleware('auth');
         Route::resource('/user/settings',\App\Http\Controllers\Shop\UserSettings::class)->only($methods_user)->middleware('auth');
 });
+
+   route::get('admin/dashboard',([\App\Http\Controllers\Admin\AdminController::class,'index']))
+       ->name('admin.dashboard')->middleware('isAdmin');
+
 
 
 //$route_group=[
