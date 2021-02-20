@@ -11,6 +11,8 @@ use App\Models\Genres;
 use App\Models\Author;
 use App\Models\AuthorBook;
 use App\Models\Book;
+use App\Models\Reviews;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -27,24 +29,26 @@ class BookShopController extends BaseController
         $user=Auth::user()->id;
         $items=Book::where('user_id','=',$user)->get();
 
-        // dd($items);
+
         return view('shop.products.dashboard',compact('items'));
 
-
-//        $items=Book::with('author')->simplePaginate(25);
-//
-//
-//      //dd($items);
-//        return view('shop.products.home',compact('items'));
     }
-//    public function userBooks()
-//    {
-//        $user=Auth::user()->id;
-//        $items=Book::where('user_id','=',$user)->get();
-//
-//       // dd($items);
-//        return view('dashboard',compact('items'));
-//    }
+    public function showBooks()
+    {
+
+        $items=Book::with('author')->latest()->simplePaginate(25);
+
+        return view('home',compact('items'));
+    }
+    public function show($id)
+    {
+
+        $book=Book::withAvg('review','rating')->findOrfail($id);
+
+        return view('view_book',compact('book'));
+    }
+
+
 
 
     public function create()
@@ -153,7 +157,6 @@ class BookShopController extends BaseController
     {
 
 
-
         $book=Book::findOrFail($id);
         $book->delete();
 
@@ -169,6 +172,27 @@ class BookShopController extends BaseController
     public function search(Request $request, $id)
     {
         //
+    }
+
+    public function storeReview(Request $request, $id)
+    {
+
+        $request->validate([
+            'description' => 'required|min:10|max:250',
+            'rating' => 'required|numeric|min:1|max:5',
+        ]);
+       $user=Auth::user()->id;
+        $review=Reviews::create(['user_id'=>$user,'book_id'=>$id]+$request->input());
+
+        if($review){
+            return back()
+                ->with(['success'=>'You add comment for this book']);
+        }else{
+            return back()->withErrors(['msd'=>'Error on save date'])->withInput();
+        }
+
+
+
     }
 
 }

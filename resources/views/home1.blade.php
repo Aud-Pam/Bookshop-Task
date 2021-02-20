@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-mano')
 @section('content')
 <div class="container mx-auto">
     <!-- ... -->
@@ -11,7 +11,7 @@
 
                 <div class="border-solid border-4 border-light-blue-500 rounded-lg px-3 py-2 md:py-2 md:px-3 hover:border-gray-500 hover:shadow-2xl">
                     <span >
-                        <img src="{{ asset('/storage/images/'.$item->file) }}" alt="">
+                        <img href="{{'book.view'/$item->id}}" src="{{ asset('/storage/images/'.$item->file) }}" alt="">
                     </span>
 
 

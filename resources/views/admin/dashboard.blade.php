@@ -52,7 +52,7 @@
                                                     Status
                                                 </th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-
+                                                    ON/OFF
                                                 </th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 </th>
@@ -76,7 +76,7 @@
                                                         </div>
                                                         <div class="ml-4">
                                                             <div class="max-w-xs text-xm font-medium text-gray-900 font-bold ">
-                                                                {{$item->title}}
+                                                                <span class="block overflow-ellipsis overflow-hidden  whitespace-nowrap  text-xl text-center">{{$item->title}} </span>
                                                             </div>
 
                                                         </div>
@@ -98,11 +98,15 @@
                 </span>
                                                         @endif
                                                 </td>
-                                                {{--<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">--}}
-                                                    {{--Admin--}}
-                                                {{--</td>--}}
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    <form action="{{ route('admin.dashboard.activate', $item->id)}}" method="post">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <button class="bg-red-400 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type="submit">Activate</button>
+                                                    </form>
+                                                </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{'books/'.$item->id.'/edit'}}" class="p-6 bg-blue">Edit</a>
+                                                    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{'dashboard/book/edit/'.$item->id}}" class="p-6 bg-blue">Edit</a>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                     <form action="{{ route('shop.books.destroy', $item->id)}}" method="post">
@@ -123,7 +127,7 @@
                             </div>
                         </div>
 
-
+                    <div class="float-right mt-20">{{ $items->links() }}</div>
                         {{--/////-----////--}}
                 </div>
             </div>

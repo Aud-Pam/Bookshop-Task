@@ -16,7 +16,9 @@ class Book extends Model
             'file',
             'description',
             'price',
-            'discount'
+            'discount',
+            'active',
+            'active_at',
         ];
 
 
@@ -49,11 +51,18 @@ class Book extends Model
         }
         return implode(',',$newArray);
     }
+    public function genreList($collection){
+        foreach ($collection as $item){
+            $newArray[]=$item['name'];
+        }
+        return implode(',',$newArray);
+    }
 
 
     public function author()
     {
-        return $this->belongsToMany(Author::class,'author_book','book_id','author_id')
+//        'author_book','book_id','author_id'
+        return $this->belongsToMany(Author::class)
             ->withTimestamps();
 
     }
@@ -64,5 +73,12 @@ class Book extends Model
             ->withTimestamps()->withPivot('genre_id');
 
     }
+    public function review()
+    {
+        return $this->hasMany(Reviews::class,'book_id','id');
+
+    }
+
+
 
 }

@@ -16,27 +16,36 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//
+//});
 
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //
-
+Route::get('/',([\App\Http\Controllers\Shop\BookShopController::class,'showBooks']))->name('index');
+Route::get('/show/{id}',([\App\Http\Controllers\Shop\BookShopController::class,'show']))->name('book.view');
 
     Route::group(['prefix'=>'shop', 'as'=>'shop.'],function(){
         $methods=['edit','store','update','create','destroy'];
         $methods_user=['index','update','updatePass'];
         Route::get('/dashboard',([\App\Http\Controllers\Shop\BookShopController::class,'index']))->name('dashboard')->middleware('auth');
         Route::put('/user/settings',([\App\Http\Controllers\Shop\UserSettings::class,'updatePass']))->name('password.update')->middleware('auth');
+        Route::put('/book/review/store/{id}',([\App\Http\Controllers\Shop\BookShopController::class,'storeReview']))->name('store.review')->middleware('auth');
+
         Route::resource('books',\App\Http\Controllers\Shop\BookShopController::class)->only($methods)->middleware('auth');
         Route::resource('/user/settings',\App\Http\Controllers\Shop\UserSettings::class)->only($methods_user)->middleware('auth');
 });
 
    route::get('admin/dashboard',([\App\Http\Controllers\Admin\AdminController::class,'index']))
        ->name('admin.dashboard')->middleware('isAdmin');
+    route::put('admin/dashboard/activate/{id}',([\App\Http\Controllers\Admin\AdminController::class,'activate']))
+    ->name('admin.dashboard.activate')->middleware('isAdmin');
+route::get('admin/dashboard/book/edit/{id}',([\App\Http\Controllers\Admin\AdminController::class,'edit']))
+    ->name('admin.dashboard.book.edit')->middleware('isAdmin');
+route::put('admin/dashboard/book/update/{id}',([\App\Http\Controllers\Admin\AdminController::class,'update']))
+    ->name('admin.dashboard.book.update')->middleware('isAdmin');
 
 
 

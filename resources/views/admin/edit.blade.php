@@ -12,8 +12,7 @@
                     <div class="flex justify-between w-full">
                         <div class="text-green-600">
                             <p class="mb-2 font-bold">
-                                Book edited
-                                successfully
+                                Book edited successfully
                             </p>
                             <p class="text-xs">
                                 {{$message}}
@@ -57,7 +56,7 @@
                     @endif
 
 
-                        <form action="{{ route('shop.books.update',$book->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.dashboard.book.update',$book->id) }}" method="POST" enctype="multipart/form-data">
                             @method('PUT')
                         @csrf
                         <div class="mb-4">

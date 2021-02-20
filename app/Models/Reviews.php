@@ -11,9 +11,13 @@ class Reviews extends Model
 
     protected $fillable =
         [
-
+            'rating',
+            'description',
             'user_id',
             'book_id'
         ];
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
