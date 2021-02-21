@@ -4,30 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" line="46" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2205296-2089-45c7-9568-644f82f7da50" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bookshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bookshop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Shop/BookSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Shop/BookSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Shop/BookShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Shop/BookShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreBookRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreBookRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/products/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/products/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/view_book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/view_book.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="d2205296-2089-45c7-9568-644f82f7da50" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +34,8 @@
       <file leaf-file-name="BookShopController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Shop/BookShopController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="224" column="7" selection-start-line="224" selection-start-column="7" selection-end-line="224" selection-end-column="7" />
+            <state relative-caret-position="315">
+              <caret line="225" column="64" selection-start-line="225" selection-start-column="64" selection-end-line="225" selection-end-column="64" />
               <folding>
                 <element signature="e#80#118#0#PHP" expanded="true" />
               </folding>
@@ -78,8 +55,8 @@
       <file leaf-file-name="notifications.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/shop/products/notifications.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
+            <state relative-caret-position="213">
+              <caret line="39" column="55" lean-forward="true" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -162,10 +139,10 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>sear</find>
-      <find>bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2</find>
+      <find />
       <find>passw</find>
       <find>last</find>
-      <find>last nae</find>
+      <find />
       <find>name</find>
       <find>dash</find>
       <find>dashboard</find>
@@ -175,10 +152,10 @@
       <find>Name</find>
       <find>butt</find>
       <find>link</find>
-      <find>&lt;div class=&quot;float-right mt-20&quot;&gt;{{ $items-&gt;links() }}&lt;/div&gt;</find>
-      <find>Buy me a beer</find>
+      <find />
+      <find />
       <find>How</find>
-      <find>max-w-6xl mx-auto sm:px-6 lg:px-8</find>
+      <find />
       <find>img</find>
       <find>che</find>
       <find>log</find>
@@ -245,10 +222,10 @@
         <option value="$PROJECT_DIR$/resources/views/view_book.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Notifications/ReportBook.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Shop/BookShopController.php" />
         <option value="$PROJECT_DIR$/resources/views/shop/products/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Shop/BookShopController.php" />
         <option value="$PROJECT_DIR$/resources/views/shop/products/notifications.blade.php" />
       </list>
     </option>
@@ -470,7 +447,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="naviga&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/navigation.blade.php&#10;dash&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/dashboard.blade.php&#10;databaseno&#9;null&#9;null&#10;web&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/routes/web.php&#10;edit&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/edit.blade.php&#10;view&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/view_book.blade.php&#10;streambu&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php&#10;mail.php&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/config/mail.php&#10;book&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;user&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/User.php&#10;regis&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/auth/register.blade.php&#10;login&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/auth/login.blade.php&#10;logi&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/auth/login.blade.php&#10;sea&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookSearch.php&#10;sear&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookSearch.php&#10;create&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/shop/products/create.blade.php&#10;base&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/base.blade.php&#10;sho&#9;null&#9;null&#10;admin&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Admin/AdminController.php&#10;dashboard&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/dashboard.blade.php&#10;app&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/app.blade.php&#10;navi&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/navigation.blade.php&#10;revie&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/Reviews.php&#10;re&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/Reviews.php&#10;vi&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/view_book.blade.php&#10;das&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/dashboard.blade.php&#10;books&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;home&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/home.blade.php&#10;rest&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/RestTestController.php&#10;fac&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/factories/UserFactory.php&#10;seed&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/seeders/DatabaseSeeder.php&#10;shop&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;bookCo&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;we&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/routes/web.php&#10;author&#9;null&#9;null&#10;veri&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Middleware/VerifyIsAdmin.php&#10;Auth&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/routes/auth.php&#10;wel&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/welcome.blade.php&#10;midd&#9;null&#9;null&#10;updatePass&#9;null&#9;null&#10;reques&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Requests/UserSettingsRequest.php&#10;setti&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/UserSettings.php&#10;crea&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/shop/products/create.blade.php&#10;test&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/RestTestController.php&#10;creat&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/shop/products/create.blade.php&#10;gen&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/GenreBook.php&#10;genre&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/Genres.php&#10;author_book&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/migrations/2021_02_08_080658_create_author_book_table.php&#10;store&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Requests/StoreBookRequest.php&#10;see&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/seeders/DatabaseSeeder.php" />
+    <property name="SearchEverywhereHistoryKey" value="sear&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/search.blade.php&#10;naviga&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/navigation.blade.php&#10;dash&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/dashboard.blade.php&#10;databaseno&#9;null&#9;null&#10;web&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/routes/web.php&#10;edit&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/edit.blade.php&#10;view&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/view_book.blade.php&#10;streambu&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php&#10;mail.php&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/config/mail.php&#10;book&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;user&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/User.php&#10;regis&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/auth/register.blade.php&#10;login&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/auth/login.blade.php&#10;logi&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/auth/login.blade.php&#10;sea&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookSearch.php&#10;create&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/shop/products/create.blade.php&#10;base&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/base.blade.php&#10;sho&#9;null&#9;null&#10;admin&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Admin/AdminController.php&#10;dashboard&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/dashboard.blade.php&#10;app&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/app.blade.php&#10;navi&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/layouts/navigation.blade.php&#10;revie&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/Reviews.php&#10;re&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/Reviews.php&#10;vi&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/view_book.blade.php&#10;das&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/admin/dashboard.blade.php&#10;books&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;home&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/home.blade.php&#10;rest&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/RestTestController.php&#10;fac&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/factories/UserFactory.php&#10;seed&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/seeders/DatabaseSeeder.php&#10;shop&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;bookCo&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/BookShopController.php&#10;we&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/routes/web.php&#10;author&#9;null&#9;null&#10;veri&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Middleware/VerifyIsAdmin.php&#10;Auth&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/routes/auth.php&#10;wel&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/welcome.blade.php&#10;midd&#9;null&#9;null&#10;updatePass&#9;null&#9;null&#10;reques&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Requests/UserSettingsRequest.php&#10;setti&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/Shop/UserSettings.php&#10;crea&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/shop/products/create.blade.php&#10;test&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Controllers/RestTestController.php&#10;creat&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/resources/views/shop/products/create.blade.php&#10;gen&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/GenreBook.php&#10;genre&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Models/Genres.php&#10;author_book&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/migrations/2021_02_08_080658_create_author_book_table.php&#10;store&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/app/Http/Requests/StoreBookRequest.php&#10;see&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/bookshop/database/seeders/DatabaseSeeder.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -523,12 +500,12 @@
       <workItem from="1613376944898" duration="61675000" />
       <workItem from="1613597302036" duration="22000" />
       <workItem from="1613597627896" duration="42814000" />
-      <workItem from="1613811907205" duration="36729000" />
+      <workItem from="1613811907205" duration="37030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262469000" />
+    <option name="totallyTimeSpent" value="262770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
@@ -951,16 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Shop/BookShopController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="224" column="7" selection-start-line="224" selection-start-column="7" selection-end-line="224" selection-end-column="7" />
-          <folding>
-            <element signature="e#80#118#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/DatabaseNotification.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
@@ -968,10 +935,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Shop/BookShopController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="225" column="64" selection-start-line="225" selection-start-column="64" selection-end-line="225" selection-end-column="64" />
+          <folding>
+            <element signature="e#80#118#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/shop/products/notifications.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
+        <state relative-caret-position="213">
+          <caret line="39" column="55" lean-forward="true" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
         </state>
       </provider>
     </entry>
