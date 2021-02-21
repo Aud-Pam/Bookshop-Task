@@ -24,8 +24,18 @@
                 <div>
                     <div class="inline-block align-bottom mr-5">
 
-                        <span class="font-bold text-5xl leading-none align-baseline">{{$book->price}}</span>
-                        <span class="text-2xl leading-none align-baseline">€</span>
+
+                        @if(($book->price_discount))
+                            <p class="text-3xl text-gray-900 ">
+                                <span class="line-through text-2xl">{{$book->price}} €</span>
+                                <span class="font-bold text-5xl leading-none align-baseline">{{$book->discounted_price}} €</span>
+                            </p>
+
+                        @else
+                            <p class="font-bold text-5xl leading-none align-baseline">
+                                {{$item->price}}€
+                            </p>
+                        @endif
                     </div>
                     <div class="inline-block align-bottom">
                         <div class="flex justify-center items-center">
@@ -115,7 +125,7 @@
             </div>
         </div>
         <div class="w-3/4 flex flex-col">
-            <textarea rows="3" class="p-4 text-gray-500 rounded-xl resize-none" name="description">Leave a message, if you want</textarea>
+            <textarea rows="3" class="p-4 text-gray-500 rounded-xl resize-none" name="description"></textarea>
             <button class="py-3 my-8 text-lg bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl text-white">Rate now</button>
         </div>
 
