@@ -50,6 +50,10 @@
                         >
                             {{ __('Settings') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('shop.book.notifications')"
+                        >
+                            {{ __('Notifications') }}
+                        </x-dropdown-link>
 
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

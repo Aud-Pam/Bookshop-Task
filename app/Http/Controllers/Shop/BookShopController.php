@@ -13,10 +13,14 @@ use App\Models\AuthorBook;
 use App\Models\Book;
 use App\Models\Reviews;
 use App\Models\User;
+use App\Notifications\ReportBook;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+//use Intervention\Image\Facades\Image as Image;
+use Intervention\Image\Facades\Image;
 use function PHPUnit\Framework\isEmpty;
 use Symfony\Component\Console\Input\Input;
 
@@ -26,8 +30,8 @@ class BookShopController extends BaseController
     public function index()
     {
 
-        $user=Auth::user()->id;
-        $items=Book::where('user_id','=',$user)->get();
+        $items=Auth::user()->books()->latest()->get();
+       // $items=Book::where('user_id','=',$user)->get();
 
 
         return view('shop.products.dashboard',compact('items'));
@@ -36,7 +40,7 @@ class BookShopController extends BaseController
     public function showBooks()
     {
 
-        $items=Book::with('author')->latest()->simplePaginate(25);
+        $items=Book::where('active','1')->with('author')->latest()->simplePaginate(25);
 
         return view('home',compact('items'));
     }
@@ -65,10 +69,19 @@ class BookShopController extends BaseController
     {
         $user_id=Auth::user()->id; //get user id
         $inputs=$request->except(['author']); // get inputs without authors
+
+        //file upload with #1
+//        $image = $request->file('file');
+//        $file_name  = time() . '.' . $image->getClientOriginalExtension();
+//        $path = public_path('/storage/images' . $file_name);
+//        Image::make($image->getRealPath())->resize(200, 200)->save($path);
+        //End
+        //file upload without crop #2
         $file= $request->file('file');
         $destinationPath = public_path('/storage/images');
         $file_name=$user_id .'_'.time().'_'.$file->getClientOriginalName();
         $file->move($destinationPath,$file_name);
+        //-----------
         $book=new Book(['user_id'=>$user_id,'file'=>$file_name]+$inputs);
         $book->save();//save new book
 
@@ -82,9 +95,6 @@ class BookShopController extends BaseController
 
         //only the IDs in the given array will exist in the intermediate table:
         $book->genre()->sync($request->genres);
-
-
-
 
         if($book){
             return redirect()->route('shop.dashboard')
@@ -193,6 +203,28 @@ class BookShopController extends BaseController
 
 
 
+    }
+    public function reportBook(Request $request, $id){
+
+        $book=Book::findOrFail($id);
+        //dd($book);
+        $request->validate(['text'=>'required|max:255']);
+        $report=Auth::user()->notify(new ReportBook($book->title,$request->text));
+
+        if(!$report){
+            return redirect()->route('book.view',$id)
+                ->with(['success'=>'Report Send Successfuly']);
+        }else{
+            return redirect()->route('book.view',$id)->withErrors(['msd'=>'Error on save date'])->withInput();
+        }
+    }
+    public function showNotifications(){
+
+
+//       dd($notifications);
+       return view('shop.products.notifications',[
+           'notifications'=> auth()->user()->unreadnotifications
+       ]);
     }
 
 }

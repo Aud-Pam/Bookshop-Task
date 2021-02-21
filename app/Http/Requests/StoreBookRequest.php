@@ -27,8 +27,8 @@ class StoreBookRequest extends FormRequest
             'title' => 'required|max:255',
             'author'=>'required',
             'genres'=>'required',
-            'description' => 'required',
-            'price'=>'required|numeric|max:99999',
+            'description' => 'required|max:500',
+            'price'=>'required|numeric|max:99999|integer|min:0',
             'file' => 'required|mimes:jpg,bmp,png'
         ];
     }

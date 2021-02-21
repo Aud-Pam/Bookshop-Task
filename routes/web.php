@@ -26,10 +26,14 @@ use Illuminate\Support\Facades\Route;
 //
 Route::get('/',([\App\Http\Controllers\Shop\BookShopController::class,'showBooks']))->name('index');
 Route::get('/show/{id}',([\App\Http\Controllers\Shop\BookShopController::class,'show']))->name('book.view');
+Route::get('/search',([\App\Http\Controllers\Shop\BookSearch::class,'show']))->name('search');
 
     Route::group(['prefix'=>'shop', 'as'=>'shop.'],function(){
-        $methods=['edit','store','update','create','destroy'];
+        $methods=['edit','store','update','create','destroy','reportBook'];
         $methods_user=['index','update','updatePass'];
+
+        Route::get('/book/notifications',([\App\Http\Controllers\Shop\BookShopController::class,'showNotifications']))->name('book.notifications')->middleware('auth');
+        Route::put('/book/report/{id}',([\App\Http\Controllers\Shop\BookShopController::class,'reportBook']))->name('book.report')->middleware('auth');
         Route::get('/dashboard',([\App\Http\Controllers\Shop\BookShopController::class,'index']))->name('dashboard')->middleware('auth');
         Route::put('/user/settings',([\App\Http\Controllers\Shop\UserSettings::class,'updatePass']))->name('password.update')->middleware('auth');
         Route::put('/book/review/store/{id}',([\App\Http\Controllers\Shop\BookShopController::class,'storeReview']))->name('store.review')->middleware('auth');

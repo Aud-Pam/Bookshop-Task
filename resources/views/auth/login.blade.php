@@ -30,6 +30,7 @@
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />
+                <input type="checkbox" onclick="myFunction()">Show Password
             </div>
 
             <!-- Remember Me -->
@@ -57,3 +58,13 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+<script>
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>

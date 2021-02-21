@@ -47,6 +47,7 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
+                <input type="checkbox" onclick="myFunction()">Show Passwords
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -61,3 +62,17 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("password");
+        var y = document.getElementById("password_confirmation");
+        if ((y.type && x.type) === "password") {
+            x.type = "text";
+            y.type = "text";
+        } else {
+            x.type = "password";
+            y.type = "password";
+        }
+    }
+</script>

@@ -40,13 +40,28 @@
                                     <div class="w-full px-4 float-right">
 
                                     <button class="bg-gray-100 border border-gray-400 px-3 py-1 rounded  text-gray-800 mt-2 " onclick="window.location.href='#review'">write a review</button>
+
                                 </div>
 
+
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+            @if(Auth::user())
+            <form action="{{ route('shop.book.report',$book->id) }}" method="POST" enctype="multipart/form-data">
+                @method('PUT')
+                @csrf
+                <textarea rows="3" class="p-4 text-gray-500 rounded-xl resize-none" name="text"></textarea>
+                <button class="py-3 mx-4 px-8 text-lg bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl text-white">Report</button>
+            </form>
+        @endif
         </div>
     </div>
 </div>
@@ -103,12 +118,13 @@
             <textarea rows="3" class="p-4 text-gray-500 rounded-xl resize-none" name="description">Leave a message, if you want</textarea>
             <button class="py-3 my-8 text-lg bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl text-white">Rate now</button>
         </div>
+
     </div>
 
 </div>
     @else
             <p class="text-lg text-gray-800 text-center mb-10" id="review">If You want to leave comment please <a href="/login">login</a></p>
-
+            </form>
         @endif
 
 

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+//use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Book extends Model
 {
@@ -19,20 +21,11 @@ class Book extends Model
             'discount',
             'active',
             'active_at',
+            'price_discount'
         ];
 
 
-//    public function checkGenre($bookcollection,$genrecolection){
-//    foreach ($bookcollection as $item){
-//        if($genrecolection->contains($item->pivot->genre_id)){
-//            // return 'checked';
-//            echo 'yra';
-//        }
-//        //return '';
-//
-//    }
-//
-//}
+
 
     public function checkGenre($genre_id,$book_collection)
     {
@@ -79,6 +72,25 @@ class Book extends Model
 
     }
 
+    public function getDiscountedPriceAttribute()
+    {
+        return $this->price * (1 - $this->price_discount / 100);
+    }
+
+    public function getDataDifferenceAttribute()
+    {
+        $date = Carbon::parse($this->active_at);
+        if($date->diffInDays()<7)
+        return 'NEW';
+        else{
+            false;
+        }
+    }
+    public function scopeActive($query){
+
+        return $query->where('active',1);
+
+    }
 
 
 }

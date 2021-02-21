@@ -32,7 +32,6 @@
                 <div class="p-6 bg-white border-b border-gray-200">
 
                     <!-- This example requires Tailwind CSS v2.0+ -->
-                        <input type="text" id="search" class="h-14 w-64 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none" placeholder="Search anything...">
 
                         <div class="flex flex-col">
                             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
