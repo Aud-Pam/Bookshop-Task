@@ -13,9 +13,4 @@ class Author extends Model
         [
             'name'
         ];
-
-
-
-
-
 }

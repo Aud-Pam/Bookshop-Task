@@ -14,99 +14,77 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-
-//    public function __construct()
-//    {
-//    $this->middleware('isAdmin');
-//    }
-
     public function index()
     {
-        $items=Book::orderBy('created_at', 'desc')->with('author')->simplePaginate(25);
-        return view('admin/dashboard',compact('items'));
+        $items = Book::orderBy('created_at', 'desc')->with('author')->simplePaginate(25);
+        return view('admin/dashboard', compact('items'));
     }
 
     public function activate($id)
     {
-        $book=Book::findOrFail($id);
-        if($book->active !== 0){
-            $result=$book->update(['active'=>0]);
+        $book = Book::findOrFail($id);
+        if ($book->active !== 0) {
+            $result = $book->update(['active' => 0]);
 
-        }else{
-            $result=$book->update(['active'=>1]);
-            if($book->active_at == null){
-                $result=$book->update(['active_at'=>Carbon::now()]);
+        } else {
+            $result = $book->update(['active' => 1]);
+            if ($book->active_at == null) {
+                $result = $book->update(['active_at' => Carbon::now()]);
             }
         }
 
-        if($result){
+        if ($result) {
             return redirect()->route('admin.dashboard')
-                ->with(['success'=>'Successfuly Updated']);
-        }else{
-            return redirect()->route('admin.dashboard')->withErrors(['msd'=>'Error on save date'])->withInput();
+                ->with(['success' => 'Successfuly Updated']);
+        } else {
+            return redirect()->route('admin.dashboard')->withErrors(['msd' => 'Error on save date'])->withInput();
         }
-
-
-
     }
-
 
     public function edit($id)
     {
-        $genres=Genres::all();
-        $book=Book::findOrFail($id);
+        $genres = Genres::all();
+        $book = Book::findOrFail($id);
 
-        return view('admin/edit', compact('book','genres'));
+        return view('admin/edit', compact('book', 'genres'));
     }
 
 
-
-    public function update (EditBookRequest $request, $id)
+    public function update(EditBookRequest $request, $id)
     {
-        //dd($request);
-        $book=Book::find($id);
+        $book = Book::find($id);
+        $inputs = $request->except(['author', 'genres']);
 
-        if(empty($book)){
+        if (empty($book)) {
             return back()->withInput();
         }
 
-        $inputs=$request->except(['author','genres']);
-
-
-
-        if($request->file('file')!==null){
-            $file= $request->file('file');
+        if ($request->file('file') !== null) {
+            $file = $request->file('file');
             $destinationPath = public_path('/storage/images');
-            $file_name=$book->user_id .'_'.time().'_'.$file->getClientOriginalName();
-            $file->move($destinationPath,$file_name);
-        }else{
-            $file_name= $book->file;
+            $file_name = $book->user_id . '_' . time() . '_' . $file->getClientOriginalName();
+            $file->move($destinationPath, $file_name);
+        } else {
+            $file_name = $book->file;
         }
 
-        $result=$book->update(['file'=>$file_name]+$inputs);
-
-
+        $result = $book->update(['file' => $file_name] + $inputs);
         //DELETE FILE NOT WORK
-
-
-        $input_authors=Str::of($request->input('author'))->trim()->explode(',');
+        $input_authors = Str::of($request->input('author'))->trim()->explode(',');
         $book->author()->detach();
-        foreach ($input_authors as $author){
-            $author_id=Author::updateOrCreate(['name'=>$author]);//check
+        foreach ($input_authors as $author) {
+            $author_id = Author::updateOrCreate(['name' => $author]);//check
             $book->author()->attach($author_id->id); //attach author_id and book_id on author_book table
 
         }
 
-
         $book->genre()->sync($request->genres);
 
-        if($result){
+        if ($result) {
             return back()
-                ->with(['success'=>'Book Updated !!!']);
-        }else{
-            return back()->withErrors(['msd'=>'Error on save date'])->withInput();
+                ->with(['success' => 'Book Updated !!!']);
+        } else {
+            return back()->withErrors(['msd' => 'Error on save date'])->withInput();
         }
-
-
     }
 }

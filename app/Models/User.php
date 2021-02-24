@@ -40,27 +40,30 @@ class User extends Authenticatable
      *
      * @var array
      */
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-        public function books()
+
+    public function books()
     {
         return $this->hasMany(Book::class);
 
     }
+
     public function role()
     {
         return $this->belongsTo(Roles::class);
 
     }
 
-    public function isAdministrator(){
-            if($this->role->name == 'admin'){
-                return true;
-            }
-            return false;
+    public function isAdministrator()
+    {
+        if ($this->role->name == 'admin') {
+            return true;
+        }
+        return false;
     }
-
 
 
 }

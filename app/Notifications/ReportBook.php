@@ -18,50 +18,50 @@ class ReportBook extends Notification
      *
      * @param $title
      */
-    public function __construct($title,$text)
+
+    public function __construct($title, $text)
     {
-        //
-        $this->title= $title;
-        $this->text= $text;
+
+        $this->title = $title;
+        $this->text = $text;
     }
 
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param  mixed $notifiable
      * @return array
      */
     public function via($notifiable)
     {
-        return ['mail','database'];
+        return ['mail', 'database'];
     }
 
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param  mixed $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->line('The introduction to the notification.')
+            ->action('Notification Action', url('/'))
+            ->line('Thank you for using our application!');
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param  mixed $notifiable
      * @return array
      */
     public function toArray($notifiable)
     {
         return [
-            'title'=>$this->title,
-            'text'=>$this->text,
-
+            'title' => $this->title,
+            'text' => $this->text,
         ];
     }
 }

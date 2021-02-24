@@ -33,7 +33,7 @@
 
                         @else
                             <p class="font-bold text-5xl leading-none align-baseline">
-                                {{$item->price}}€
+                                {{$book->price}}€
                             </p>
                         @endif
                     </div>

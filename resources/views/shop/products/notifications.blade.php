@@ -32,16 +32,24 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <ul>
 
+
                         @foreach($notifications as $notification)
-                            @if($notification->type=='App\Notifications\ReportBook')
+                         @if($notification->type=='App\Notifications\ReportBook')
 
                             <li>
-                                {{$notification->title}}
-                                {{$notification->text}}
+                                <label class="font-bold underline">Book Title:</label>
+                                {{$notification->data['title']}}
+
+                                <p>
+                                    <label for="text" class="font-bold italic">Report text:</label>
+                                    {{$notification->data['text']}}
+                                </p>
+
                             </li>
 
                             @endif
                         @endforeach
+
 
                     </ul>
 

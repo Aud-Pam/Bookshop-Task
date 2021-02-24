@@ -9,5 +9,4 @@ class AuthorBook extends Model
 {
     use HasFactory;
 
-
 }

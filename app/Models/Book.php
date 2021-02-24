@@ -10,9 +10,9 @@ use Illuminate\Support\Carbon;
 class Book extends Model
 {
     use HasFactory;
+
     protected $fillable =
         [
-
             'user_id',
             'title',
             'file',
@@ -24,10 +24,11 @@ class Book extends Model
             'price_discount'
         ];
 
+    protected $casts = [
+        'data' => 'array',
+    ];
 
-
-
-    public function checkGenre($genre_id,$book_collection)
+    public function checkGenre($genre_id, $book_collection)
     {
         foreach ($book_collection as $item) {
             if ($item->pivot->genre_id == $genre_id) {
@@ -36,39 +37,37 @@ class Book extends Model
         }
     }
 
-
-
-    public function authorList($collection){
-        foreach ($collection as $item){
-            $newArray[]=$item['name'];
+    public function authorList($collection)
+    {
+        foreach ($collection as $item) {
+            $newArray[] = $item['name'];
         }
-        return implode(',',$newArray);
-    }
-    public function genreList($collection){
-        foreach ($collection as $item){
-            $newArray[]=$item['name'];
-        }
-        return implode(',',$newArray);
+        return implode(',', $newArray);
     }
 
+    public function genreList($collection)
+    {
+        foreach ($collection as $item) {
+            $newArray[] = $item['name'];
+        }
+        return implode(',', $newArray);
+    }
 
     public function author()
     {
-//        'author_book','book_id','author_id'
         return $this->belongsToMany(Author::class)
             ->withTimestamps();
-
     }
 
     public function genre()
     {
-        return $this->belongsToMany(Genres::class,'genre_book','book_id','genre_id')
+        return $this->belongsToMany(Genres::class, 'genre_book', 'book_id', 'genre_id')
             ->withTimestamps()->withPivot('genre_id');
-
     }
+
     public function review()
     {
-        return $this->hasMany(Reviews::class,'book_id','id');
+        return $this->hasMany(Reviews::class, 'book_id', 'id');
 
     }
 
@@ -80,16 +79,16 @@ class Book extends Model
     public function getDataDifferenceAttribute()
     {
         $date = Carbon::parse($this->active_at);
-        if($date->diffInDays()<7)
-        return 'NEW';
-        else{
-            false;
+        if ($date->diffInDays() < 7) {
+            return 'NEW';
+        } else {
+            return '';
         }
     }
-    public function scopeActive($query){
 
-        return $query->where('active',1);
-
+    public function scopeActive($query)
+    {
+        return $query->where('active', 1);
     }
 
 
