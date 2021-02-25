@@ -65,10 +65,13 @@ class Book extends Model
             ->withTimestamps()->withPivot('genre_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function review()
     {
-        return $this->hasMany(Reviews::class, 'book_id', 'id');
-
+        return $this->hasMany(Reviews::class, 'book_id','id')->latest();
     }
 
     public function getDiscountedPriceAttribute()

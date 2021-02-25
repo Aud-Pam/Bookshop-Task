@@ -19,6 +19,7 @@ class User extends Authenticatable
 
 
     protected $fillable = [
+        'user_id',
         'name',
         'email',
         'birth_day',
@@ -49,6 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Book::class);
 
+    }
+    public function review()
+    {
+        return $this->hasMany(Reviews::class, 'user_id', 'id');
     }
 
     public function role()

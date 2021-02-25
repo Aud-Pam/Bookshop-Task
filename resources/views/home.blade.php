@@ -14,6 +14,8 @@
                     @foreach($items as $item)
                                 <div class="bg-white shadow-xl rounded-lg overflow-hidden">
                                     <a href="{{'show/'.$item->id}}">
+
+
                                     <div class="bg-cover bg-center h-56 p-4" style="background-image: url({{ asset('/storage/images/'.$item->file) }})">
                                         <div class="inline-block justify-start bg-white">
 

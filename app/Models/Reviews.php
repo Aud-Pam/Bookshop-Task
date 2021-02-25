@@ -21,4 +21,8 @@ class Reviews extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function books()
+    {
+        return $this->belongsTo(Book::class);
+    }
 }

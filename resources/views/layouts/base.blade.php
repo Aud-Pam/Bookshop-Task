@@ -21,6 +21,7 @@
             font-family: 'Nunito';
         }
     </style>
+    @livewireStyles
 </head>
 <body class="antialiased">
 <nav class="border-b border-gray-800">
@@ -86,7 +87,7 @@
 
             </div>
 
-    @endif
+            @endif
 
     @if ($message = Session::get('success'))
         <div class="flex bg-green-200 p-4">
@@ -115,6 +116,7 @@
 
 
 @yield('content')
+@livewireScripts
 
 </body>
 </html>

@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class BookResource extends JsonResource
 {
@@ -17,7 +18,7 @@ class BookResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'file' => 'storage/images/' . $this->file,
+            'file' => Storage::disk('public')->url('images/' . $this->file),
             'price' => $this->price,
             'author' => $this->authorList($this->author),
             'genre' => $this->genreList($this->genre),
