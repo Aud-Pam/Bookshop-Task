@@ -7,25 +7,70 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Bookshop Task
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## #1 Landing page (guest and user can access)
+- List of all books
+- books displayed in 5x5 grid
+- the book has a title with author, cover, and genre
+- the book can have multiple authors and genres
+- all book covers must have consistent dimensions
+- when there are more than 25 books on a page, there will be [next] and [previous] buttons
+- books uploaded last week should have something to display that they are [NEW]
+- the book may have a discount (by percentage), and I also would like to see that in the listing [10%]
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## #2 Search bar
+- when searching for a book it should look for title and author
+- lists them in the same layout as the landing page
+- a search bar must have a cookie that tracks the previous search you had
+- Menu bar
+- Login and registration button
+
+## #3 Login page
+- a login page must have an email and password
+- must have a "remember me"
+- must have "forgot password"
+- must have a register button
+- Registration page
+- must have a log in button
+-must have an email, password with show password in it, confirm password and date of birth
+## #4 Book page
+- must have description
+- users can leave reviews
+- users can rate book
+- example of a single book
+## #5 User Account
+- they can change the password
+- they can change email
+- they can report a book (for example if there are discrepancies on some of the listed books)
+- can upload a book to the listing, then the admin must confirm the book to be listed, then it appears on the landing page and searches
+- can manage their books
+- can give a review on a book (stars + comments)
+## #6 Admin account
+- they can change the password
+- can reply to user's report
+- can manage and update all the books
+## # Technologies to be used
+- Laravel
+- HTML5
+- CSS
+- Bootstrap or Tailwind (your preference, I just want a timeless solution)
+- MySQL
+- PHP
+
+## Instalation
+
+- composer intall
+- php aritsan migrate:fresh --seed
+
+## Admin
+- admin admin@admin.com 
+- password admin
+
+
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
 ## Laravel Sponsors
 
