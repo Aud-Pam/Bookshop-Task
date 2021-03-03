@@ -14,6 +14,12 @@ class RestTestController extends Controller
     public function index()
     {
         //
+        public function Ora(){
+            $this->  get() ;
+            
+
+        }
+
     }
 
     /**

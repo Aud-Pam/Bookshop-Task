@@ -4,21 +4,16 @@ namespace App\Http\Controllers\Shop;
 
 use App\Http\Requests\EditBookRequest;
 use App\Http\Requests\StoreBookRequest;
-use App\Models\Genres;
 use App\Models\Author;
-use App\Models\AuthorBook;
 use App\Models\Book;
+use App\Models\Genres;
 use App\Models\Reviews;
 use App\Models\User;
 use App\Notifications\ReportBook;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 //use Intervention\Image\Facades\Image as Image;
-use Intervention\Image\Facades\Image;
-use function PHPUnit\Framework\isEmpty;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\Input;
 
 class BookShopController extends BaseController
@@ -39,11 +34,10 @@ class BookShopController extends BaseController
 
     public function show($id)
     {
-        $book = Book::withAvg('review', 'rating')->findOrfail($id);
+        $book = Book::findOrfail($id);
 
         return view('view_book', compact('book'));
     }
-
 
     public function create()
     {
@@ -62,15 +56,15 @@ class BookShopController extends BaseController
         $destinationPath = public_path('/storage/images');
         $file_name = $user_id . '_' . time() . '_' . $file->getClientOriginalName();
         $file->move($destinationPath, $file_name);
-        $book=Book::create(['user_id' => $user_id, 'file' => $file_name] + $inputs);
+        $book = Book::create(['user_id' => $user_id, 'file' => $file_name] + $inputs);
         $input_authors = Str::of($request->input('author'))->explode(','); // explode comma on authors inputs
 
         foreach ($input_authors as $author) {
-            $author_id = Author::updateOrCreate(['name' => $author]);//check
+            $author_id = Author::updateOrCreate(['name' => $author]); //check
             $book->author()->attach($author_id->id); //attach author_id and book_id on author_book table
         }
 
-        $book->genre()->sync($request->genres);//only the IDs in the given array will exist in the intermediate table:
+        $book->genre()->sync($request->genres); //only the IDs in the given array will exist in the intermediate table:
 
         if ($book) {
             return redirect()->route('shop.dashboard')
@@ -108,7 +102,7 @@ class BookShopController extends BaseController
         $input_authors = Str::of($request->input('author'))->trim()->explode(',');
         $book->author()->detach();
         foreach ($input_authors as $author) {
-            $author_id = Author::updateOrCreate(['name' => $author]);//check
+            $author_id = Author::updateOrCreate(['name' => $author]); //check
             $book->author()->attach($author_id->id); //attach author_id and book_id on author_book table
         }
 
@@ -120,7 +114,6 @@ class BookShopController extends BaseController
         } else {
             return back()->withErrors(['msd' => 'Error on save date'])->withInput();
         }
-
     }
 
     public function destroy($id)
@@ -135,7 +128,6 @@ class BookShopController extends BaseController
             return redirect()->route('shop.dashboard')->withErrors(['msd' => 'Error on save date'])->withInput();
         }
     }
-
 
     public function storeReview(Request $request, $id)
     {
@@ -171,7 +163,7 @@ class BookShopController extends BaseController
     public function showNotifications()
     {
         return view('shop.products.notifications', [
-            'notifications' => auth()->user()->unreadnotifications
+            'notifications' => auth()->user()->unreadnotifications,
         ]);
     }
 }
@@ -188,5 +180,3 @@ class BookShopController extends BaseController
 //    ->fit(180, 280)->save();
 //} else {
 //    $filename = 'default.jpg';
-
-

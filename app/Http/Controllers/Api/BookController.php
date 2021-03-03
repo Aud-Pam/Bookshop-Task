@@ -10,7 +10,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::active()->Paginate(25);
+        $books = Book::active()->with('author','genre')->Paginate(25);
         return BookResource::collection($books);
     }
 
