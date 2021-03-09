@@ -98,7 +98,6 @@ class BookShopController extends BaseController
         }
 
         $result = $book->update(['file' => $file_name] + $inputs);
-        //DELETE FILE NOT WORK
         $input_authors = Str::of($request->input('author'))->trim()->explode(',');
         $book->author()->detach();
         foreach ($input_authors as $author) {

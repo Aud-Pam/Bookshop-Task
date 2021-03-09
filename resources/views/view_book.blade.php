@@ -34,10 +34,15 @@
                                     {{$book->price}}€
                                 </p>
                             @endif
+                            <p class="my-8">
+                                <a href="{{route('checkout',$book->id)}}" class="px-6 py-2 transition ease-in duration-200 uppercase rounded-full
+                             hover:bg-gray-800 hover:text-white border-2 border-gray-900
+                              focus:outline-none">Buy now</a>
+                            </p>
                         </div>
                         <div class="inline-block align-bottom">
                             {{--rating avg--}}
-                            @livewire('rating-average')
+                            @livewire('rating-average',['book_id' => $book->id])
                         </div>
                     </div>
                 </div>
@@ -57,6 +62,6 @@
     </div>
     <div class="min-w-screen min-h-min bg-gray-300 flex items-center p-5 lg:p-10 overflow-hidden relative">
         {{--Review Form--}}
-        @livewire('rating')
+        @livewire('rating',['book' => $book])
     </div>
 @endsection

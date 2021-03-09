@@ -17,7 +17,6 @@ class UserSettings extends Controller
     {
         $items=Auth::user();
 
-        //dd($pass);
         $date=Carbon::parse($items->birth_day)->format('Y-m-d');
 
         return view('shop.products.user-profile',compact('items','date'));

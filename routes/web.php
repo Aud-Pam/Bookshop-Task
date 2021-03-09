@@ -26,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', ([\App\Http\Controllers\Shop\BookShopController::class, 'showBooks']))->name('index');
 Route::get('/show/{id}', ([\App\Http\Controllers\Shop\BookShopController::class, 'show']))->name('book.view');
 Route::get('/search', ([\App\Http\Controllers\Shop\BookSearch::class, 'show']))->name('search');
+Route::get('show/checkout/{id}', ([\App\Http\Controllers\Shop\CheckOutController::class, 'show']))->name('checkout');
+Route::post('show/checkout/{id}/purchase/',([\App\Http\Controllers\Shop\CheckOutController::class,'purchase']))->name('book.purchase');
 
 //API
 //Route::get('api/v1/books',([\App\Http\Controllers\Api\BookController::class, 'index']))->name('api.v1.books');

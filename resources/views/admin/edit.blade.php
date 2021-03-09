@@ -54,8 +54,6 @@
                             </div>
                         </div>
                     @endif
-
-
                         <form action="{{ route('admin.dashboard.book.update',$book->id) }}" method="POST" enctype="multipart/form-data">
                             @method('PUT')
                         @csrf

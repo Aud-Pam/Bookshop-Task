@@ -1,0 +1,84 @@
+a {
+    text-decoration: none;
+    color: #22292f;
+}
+
+.outline-0 {
+    outline: 0;
+}
+
+.lh-fix {
+    line-height: 0.75;
+}
+
+.font-wp-pusher {
+    font-family: Lato, -apple-system, Helvetica Neue, sans-serif;
+}
+
+.bg-blue-wp-pusher {
+    background-color: #1179bf;
+}
+
+.bg-green-wp-pusher {
+    background-color: #038e7d;
+}
+
+.border-blue-wp-pusher {
+    border-color: #1179bf;
+}
+
+.text-blue-wp-pusher {
+    color: #1179bf;
+}
+
+.max-w-wp-pusher {
+    max-width: 56rem;
+}
+
+.text-5\.5xl {
+    font-size: 4.125rem;
+}
+
+.ml-10 {
+    margin-left: 2.5rem;
+}
+
+.mb-10 {
+    margin-bottom: 2.5rem;
+}
+
+.mb-16 {
+    margin-bottom: 4rem;
+}
+
+.mx-16 {
+    margin: 0 4rem;
+}
+
+.p-10 {
+    padding: 2.5rem;
+}
+
+.pt-10 {
+    padding-top: 2.5rem;
+}
+
+.w-1\/2-almost {
+    width: 48%;
+}
+
+.w-3\/4 {
+    width: 75%;
+}
+
+@media (min-width: 768px) {
+    .md\:ml-10 {
+        margin-left: 2.5rem;
+    }
+
+    .md\:w-1\/2-almost {
+        width: 48% !important;
+    }
+}
+
+

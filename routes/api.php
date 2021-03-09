@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::apiResource('books',\App\Http\Controllers\Api\BookController::class)
-    ->only('index','show');
+    ->only('index','show','store');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BookResource;
 use App\Models\Book;
+use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
@@ -18,4 +19,9 @@ class BookController extends Controller
     {
         return new BookResource($book);
     }
+
+//    public function  store(request  $request){
+//    $book=Book::create($request->all());
+//    return new BookResource($book);
+//    }
 }

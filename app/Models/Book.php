@@ -69,7 +69,7 @@ class Book extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function review()
+    public function reviews()
     {
         return $this->hasMany(Reviews::class, 'book_id','id')->latest();
     }

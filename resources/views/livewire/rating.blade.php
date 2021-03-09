@@ -26,7 +26,7 @@
     @endif
 {{--Review Form--}}
     @if(Auth::user())
-        <form wire:submit.prevent="createRate('{{$book_item->id}}')" enctype="multipart/form-data">
+        <form wire:submit.prevent="createRate('{{$book->id}}')" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg mb-10">
@@ -83,7 +83,7 @@
         </form>
     @endif
         {{--Reviews--}}
-    @foreach($book as $item)
+    @foreach($reviews as $item)
         <div class="flex items-start mb-10">
             <div class="flex-shrink-0">
                 <div class="inline-block relative">
